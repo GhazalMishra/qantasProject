@@ -1,0 +1,223 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-05-31T08:32:14.466Z",
+    "end": "2021-05-31T08:32:17.613Z",
+    "duration": 3147,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9a6512c8-a9d5-4025-8cb5-10bda6324321",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6c7910e9-dba2-4612-9cc4-89a229633b8d",
+          "title": "test case for testing the air quality ",
+          "fullFile": "/Users/ghazalmishra/Documents/Interview/Qantas/test/air_Quality_Postcode.js",
+          "file": "/test/air_Quality_Postcode.js",
+          "beforeHooks": [],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook",
+              "fullTitle": "test case for testing the air quality  \"after each\" hook",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "addContext(this, {\n    title:  `Postal Code used:`,\n    value: JSON.stringify(testData.postalCode)\n})",
+              "err": {},
+              "uuid": "276f6979-2902-44ab-97b9-5a537f7c1f0d",
+              "parentUUID": "6c7910e9-dba2-4612-9cc4-89a229633b8d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Functional Test: Should be able to get the current air quality data for a particular post code -> 28546",
+              "fullTitle": "test case for testing the air quality  Functional Test: Should be able to get the current air quality data for a particular post code -> 28546",
+              "timedOut": false,
+              "duration": 988,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"Postal Code used:\",\n  \"value\": \"\\\"28546\\\"\"\n}",
+              "code": "let response = await chai.request(`https://api.weatherbit.io/v2.0/`).get(`current/airquality?postal_code=${testData.postalCode}&key=${testData.apiKey}`)\nconsole.log(\"Response\", response.text)\nexpect(response.status).to.be.equal(200);\nvar result = JSON.parse(response.text)\nexpect(result.data[0].co).to.exist\nexpect(result.data[0].predominant_pollen_type).to.be.equal('Molds')\nexpect(result.data[0].so2).to.exist\n           \nconsole.log(\"testData.lat\", testData.postalCode)",
+              "err": {},
+              "uuid": "6d4deaa6-0e08-45a2-9fb5-00b7903b79a6",
+              "parentUUID": "6c7910e9-dba2-4612-9cc4-89a229633b8d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6d4deaa6-0e08-45a2-9fb5-00b7903b79a6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 988,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 120000
+        },
+        {
+          "uuid": "1bd80bb7-7c22-4bb7-a32e-0875dc70290a",
+          "title": "test case for testing the weather data ",
+          "fullFile": "/Users/ghazalmishra/Documents/Interview/Qantas/test/lat_lon.js",
+          "file": "/test/lat_lon.js",
+          "beforeHooks": [],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook",
+              "fullTitle": "test case for testing the weather data  \"after each\" hook",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "addContext(this, {\n    title:  `Latitude Used:`,\n    value: JSON.stringify(testData.lat)\n})\naddContext(this, {\n    title:  `Longitutde Used:`,\n    value: JSON.stringify(testData.lon)\n})",
+              "err": {},
+              "uuid": "9852badb-9257-4339-b6f4-52e1dcd8cd41",
+              "parentUUID": "1bd80bb7-7c22-4bb7-a32e-0875dc70290a",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "Functional Test: Should be able to get the current weather data for a specific location based on the lat & lon -> 38 and -78.25",
+              "fullTitle": "test case for testing the weather data  Functional Test: Should be able to get the current weather data for a specific location based on the lat & lon -> 38 and -78.25",
+              "timedOut": false,
+              "duration": 1128,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"Latitude Used:\",\n    \"value\": \"38\"\n  },\n  {\n    \"title\": \"Longitutde Used:\",\n    \"value\": \"-78.25\"\n  }\n]",
+              "code": "let response = await chai.request(`https://api.weatherbit.io/v2.0/`).get(`current?lat=${testData.lat}&lon=${testData.lon}&key=${testData.apiKey}`)\nconsole.log(\"Response\", response.text)\nexpect(response.status).to.be.equal(200);\nvar result = JSON.parse(response.text)\nexpect(result.data[0].lat).to.be.equal(testData.lat)\nexpect(result.data[0].lon).to.be.equal(testData.lon)\nexpect(result.data[0].weather).to.be.an('object')\nexpect(result.data[0].weather.description).to.be.equal('Scattered clouds')\nexpect(result.count).to.be.equal(1)\nconsole.log(\"result\", result.data[0].weather)",
+              "err": {},
+              "uuid": "28c0411f-acc1-4fbd-8580-f2a510b8932e",
+              "parentUUID": "1bd80bb7-7c22-4bb7-a32e-0875dc70290a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "28c0411f-acc1-4fbd-8580-f2a510b8932e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1128,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 120000
+        },
+        {
+          "uuid": "34621bef-1162-4e7e-8bea-fb9ec2151722",
+          "title": "test case for testing the weather data  for multiple cities",
+          "fullFile": "/Users/ghazalmishra/Documents/Interview/Qantas/test/lat_lon.js",
+          "file": "/test/lat_lon.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Functional Test: Should be able to get the current weather data for multiple cities -> undefined, undefined, undefined",
+              "fullTitle": "test case for testing the weather data  for multiple cities Functional Test: Should be able to get the current weather data for multiple cities -> undefined, undefined, undefined",
+              "timedOut": false,
+              "duration": 1022,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "let response = await chai.request(`https://api.weatherbit.io/v2.0/`).get(`current?cities=${testDataList.city1}%2C%${testDataList.city2}%2C%${testDataList.city3}&key=${testDataList.apiKey}`)\nconsole.log(\"Response\", response.text)\nexpect(response.status).to.be.equal(200);\nvar result = JSON.parse(response.text)\n\nconsole.log(\"result\", result)",
+              "err": {
+                "message": "AssertionError: expected 403 to equal 200",
+                "estack": "AssertionError: expected 403 to equal 200\n    at Context.<anonymous> (test/lat_lon.js:52:43)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+                "diff": "- 403\n+ 200\n"
+              },
+              "uuid": "755472ca-b398-41ca-9c59-182f10740703",
+              "parentUUID": "34621bef-1162-4e7e-8bea-fb9ec2151722",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "755472ca-b398-41ca-9c59-182f10740703"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1022,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 120000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 120000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesomeReport",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportFilename": "mochawesomeReport"
+      },
+      "version": "5.2.0"
+    }
+  }
+}

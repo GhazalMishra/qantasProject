@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="3.1380" tests="3" failures="1">
+  <testsuite name="Root Suite" timestamp="2021-05-31T08:32:14" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="test case for testing the air quality " timestamp="2021-05-31T08:32:14" tests="1" file="/Users/ghazalmishra/Documents/Interview/Qantas/test/air_Quality_Postcode.js" time="0.9880" failures="0">
+    <testcase name="test case for testing the air quality  Functional Test: Should be able to get the current air quality data for a particular post code -&gt; 28546" time="0.9880" classname="Functional Test: Should be able to get the current air quality data for a particular post code -&gt; 28546">
+    </testcase>
+  </testsuite>
+  <testsuite name="test case for testing the weather data " timestamp="2021-05-31T08:32:15" tests="1" file="/Users/ghazalmishra/Documents/Interview/Qantas/test/lat_lon.js" time="1.1280" failures="0">
+    <testcase name="test case for testing the weather data  Functional Test: Should be able to get the current weather data for a specific location based on the lat &amp; lon -&gt; 38 and -78.25" time="1.1280" classname="Functional Test: Should be able to get the current weather data for a specific location based on the lat &amp; lon -&gt; 38 and -78.25">
+    </testcase>
+  </testsuite>
+  <testsuite name="test case for testing the weather data  for multiple cities" timestamp="2021-05-31T08:32:16" tests="1" file="/Users/ghazalmishra/Documents/Interview/Qantas/test/lat_lon.js" time="1.0220" failures="1">
+    <testcase name="test case for testing the weather data  for multiple cities Functional Test: Should be able to get the current weather data for multiple cities -&gt; undefined, undefined, undefined" time="1.0220" classname="Functional Test: Should be able to get the current weather data for multiple cities -&gt; undefined, undefined, undefined">
+      <failure message="expected 403 to equal 200" type="AssertionError"><![CDATA[AssertionError: expected 403 to equal 200
+    at Context.<anonymous> (test/lat_lon.js:52:43)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

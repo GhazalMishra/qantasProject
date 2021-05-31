@@ -1,0 +1,4 @@
+--require ./config/setup
+--recursive ./config ./test
+--reporter mocha-multi-reporters --reporter-options configFile=config.json
+--timeout 120000

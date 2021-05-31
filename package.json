@@ -1,0 +1,19 @@
+{
+  "name": "qantastest",
+  "version": "1.0.0",
+  "description": "test question for qantas",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --opts ./mocha.opts"
+  },
+  "author": "Ghazal Mishra",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.2",
+    "mocha-junit-reporter": "^2.0.0",
+    "mocha-multi-reporters": "^1.1.7",
+    "mochawesome": "^6.1.1"
+  }
+}
